@@ -1,12 +1,49 @@
-# React + Vite
+# Workik AI - Test Case Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a full-stack web application built as an assignment for the Workik AI internship. The application integrates with a user's GitHub account, allows them to select files from a repository, and uses the Google Gemini AI to generate test case summaries and full test case code.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎥 Live Demo
 
-## Expanding the ESLint configuration
+A complete walkthrough of the application's features can be viewed here:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[https://www.youtube.com/watch?v=7NHJhzUP7W4]
+
+---
+
+### ✨ Features
+
+- Secure user authentication via GitHub OAuth.
+- Fetches and displays a user's GitHub repositories and their file structures.
+- Integrates with the Google Gemini API for intelligent content generation.
+- **AI-Powered Summary Generation**: Creates a list of suggested test case summaries based on the content of selected files.
+- **AI-Powered Code Generation**: Generates complete, runnable test case code (using the Playwright framework) based on a selected summary.
+- **Bonus - Automated Pull Requests**: Automatically creates a new branch and opens a pull request on GitHub with the newly generated test file.
+- Clean, modern, and responsive user interface.
+
+---
+
+### 💻 Tech Stack
+
+- **Frontend**: React, Vite, Axios
+- **Backend**: Node.js, Express.js
+- **APIs**: GitHub REST API, Google Gemini API
+- **Styling**: Pure CSS
+
+---
+
+### 🚀 Setup and Installation
+
+To run this project locally, follow these steps:
+
+1.  Clone the repository.
+2.  **Backend Setup**:
+    - Navigate to the `backend` directory: `cd backend`
+    - Install dependencies: `npm install`
+    - Create a `.env` file and add your `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, and `GEMINI_API_KEY`.
+    - Start the server: `node index.js`
+3.  **Frontend Setup**:
+    - Navigate to the `frontend` directory: `cd frontend`
+    - Install dependencies: `npm install`
+    - Start the client: `npm run dev`

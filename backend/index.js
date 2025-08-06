@@ -95,7 +95,6 @@ app.get("/api/files", async (req, res) => {
       recursive: "true",
     });
 
-    // Filter out non-code files if you want, for now we send all
     const codeFiles = data.tree.filter((file) => file.type === "blob");
     res.json(codeFiles);
   } catch (error) {
@@ -148,7 +147,6 @@ app.post("/api/generate-summary", async (req, res) => {
     const response = await result.response;
     const text = response.text();
 
-    // Split the AI's response into an array of summaries
     const summaries = text.split("\n").filter((s) => s.length > 0);
 
     res.json({ summaries });

@@ -97,8 +97,7 @@ const handleCreatePr = async () => {
     const response = await axios.post('http://localhost:8000/api/create-pr', {
       owner,
       repo: repoName,
-      code: generatedCode,
-      // You can customize the filename and branch name here
+      code: generatedCode, 
       fileName: `tests/ai-generated-${Date.now()}.spec.js`,
       branchName: `feat/ai-test-${Date.now()}`,
       commitMessage: 'feat: Add AI-generated test case',
@@ -115,7 +114,7 @@ const handleCreatePr = async () => {
   }
 };
   
-  // Use the CSS loader for the initial file loading
+  
   if (loading) {
     return <div className="loader"></div>;
   }
