@@ -1,0 +1,152 @@
+/* frontend/src/App.css */
+
+/* --- 1. Global Styles & Color Palette --- */
+:root {
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --primary-color: #4f46e5;
+  --primary-hover-color: #6366f1;
+  --container-bg-color: #2a2a2e;
+  --border-color: #444;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* --- 2. Main App Container --- */
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* --- 3. Typography --- */
+h1, h2, h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* --- 4. Links and Buttons --- */
+a, a:visited {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(184, 234, 242);
+}
+
+button, .button-link {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .button-link:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- 5. Lists (Repos, Summaries, Files) --- */
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.repo-list li {
+  background-color: var(--container-bg-color);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.repo-list li:hover {
+  background-color: #3a3a3e;
+  border-color: var(--primary-color);
+}
+
+.file-list-container {
+  text-align: left;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--container-bg-color);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.file-list-container div {
+  padding: 5px 0;
+}
+
+.summary-list button {
+  width: 100%;
+  text-align: left;
+  background-color: var(--container-bg-color);
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.summary-list button:hover {
+  border-color: var(--primary-color);
+  background-color: #3a3a3e;
+}
+
+/* --- 6. Code Block --- */
+pre {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+/* --- 7. Loading Spinner --- */
+.loader {
+  border: 4px solid #f3f3f330; /* Light grey */
+  border-top: 4px solid var(--primary-color); /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
