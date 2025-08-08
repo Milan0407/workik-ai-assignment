@@ -47,7 +47,7 @@ function FileBrowserPage() {
     setSummaries([]);
     const fileShas = selectedFiles.map(file => file.sha);
     try {
-      const response = await axios.post('${import.meta.env.VITE_API_BASE_URL}/api/generate-summary', {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/generate-summary`, {
         owner: owner,
         repo: repoName,
         fileShas: fileShas,
@@ -71,7 +71,7 @@ function FileBrowserPage() {
     setGeneratedCode('');
     const fileShas = selectedFiles.map(file => file.sha);
     try {
-      const response = await axios.post('${import.meta.env.VITE_API_BASE_URL}/api/generate-code', {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/generate-code`, {
         owner: owner,
         repo: repoName,
         fileShas: fileShas,
@@ -94,7 +94,7 @@ const handleCreatePr = async () => {
   }
   setIsCreatingPr(true);
   try {
-    const response = await axios.post('${import.meta.env.VITE_API_BASE_URL}/api/create-pr', {
+    const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/create-pr`, {
       owner,
       repo: repoName,
       code: generatedCode, 
