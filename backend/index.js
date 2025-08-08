@@ -15,8 +15,8 @@ let accessToken = null;
 
 const corsOptions = {
   origin: [
-    'http://localhost:5173', // Your local frontend
-    // We will add your live Vercel URL here later
+    "http://localhost:5173", // Your local frontend
+    "https://workik-ai-assignment.vercel.app/",
   ],
   credentials: true,
 };
