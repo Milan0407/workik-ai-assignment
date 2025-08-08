@@ -8,7 +8,7 @@ function DashboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => { /* ... (this part is unchanged) ... */
-    axios.get('http://localhost:8000/api/repos')
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/repos`)
       .then(response => {
         setRepos(response.data);
         setLoading(false);
