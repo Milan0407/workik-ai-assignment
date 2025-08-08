@@ -13,7 +13,15 @@ const PORT = process.env.PORT || 8000;
 // In a real app, you'd store this in a database or a secure session.
 let accessToken = null;
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:5173', // Your local frontend
+    // We will add your live Vercel URL here later
+  ],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // ENDPOINT 1: Redirects user to GitHub's login page
