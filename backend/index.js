@@ -16,7 +16,7 @@ let accessToken = null;
 const corsOptions = {
   origin: [
     "http://localhost:5173", // Your local frontend
-    "https://workik-ai-assignment.vercel.app/",
+    "https://workik-ai-assignment.vercel.app",
   ],
   credentials: true,
 };
@@ -54,7 +54,7 @@ app.get("/auth/github/callback", async (req, res) => {
     console.log("Successfully obtained access token!");
 
     // Redirect the user back to the frontend dashboard
-    res.redirect("http://localhost:5173/dashboard");
+    res.redirect("https://workik-ai-assignment.vercel.app/dashboard");
   } catch (error) {
     console.error("Error getting access token:", error);
     res.status(500).send("Failed to authenticate");
@@ -294,5 +294,5 @@ app.post("/api/create-pr", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port: ${PORT}`);
 });
