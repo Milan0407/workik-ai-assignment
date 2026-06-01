@@ -8,6 +8,8 @@ import { Octokit } from "@octokit/rest";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+const FRONTEND_URL =
+  process.env.FRONTEND_URL || "https://workik-ai-assignment.vercel.app";
 
 // --- We will store the access token in memory for this assignment ---
 // In a real app, you'd store this in a database or a secure session.
@@ -16,6 +18,8 @@ let accessToken = null;
 const corsOptions = {
   origin: [
     "http://localhost:5173", // Your local frontend
+    "http://127.0.0.1:5173",
+    FRONTEND_URL,
     "https://workik-ai-assignment.vercel.app",
   ],
   credentials: true,
@@ -54,7 +58,7 @@ app.get("/auth/github/callback", async (req, res) => {
     console.log("Successfully obtained access token!");
 
     // Redirect the user back to the frontend dashboard
-    res.redirect("https://workik-ai-assignment.vercel.app/dashboard");
+    res.redirect(`${FRONTEND_URL}/dashboard`);
   } catch (error) {
     console.error("Error getting access token:", error);
     res.status(500).send("Failed to authenticate");
