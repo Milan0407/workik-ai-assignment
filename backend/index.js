@@ -140,7 +140,7 @@ app.post("/api/generate-summary", async (req, res) => {
 
     // --- AI PROMPT ENGINEERING ---
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
     const prompt = `
       You are an expert test case writer for a software development team.
       Based on the content of the following code files, provide a numbered list of short, one-sentence summaries for potential test cases.
@@ -198,7 +198,7 @@ app.post("/api/generate-code", async (req, res) => {
 
     // --- NEW, MORE SPECIFIC AI PROMPT ---
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
     // Since we are testing a web page (HTML/CSS), let's use a popular JavaScript testing framework.
     const framework = "Playwright";
 
